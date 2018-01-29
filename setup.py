@@ -1,7 +1,7 @@
 import os
 from setuptools import setup, find_packages
 from setuptools.command.install import install
-from distutils.core import run_setup
+
 __version__ = '0.1.0'
 
 # allow setup.py to be run from any path
@@ -19,12 +19,9 @@ class InstallLocalPackages(install):
         for d in os.listdir(py_path):
             print( os.path.join(py_path, d))
             cmd = "python %s/setup.py install"%os.path.join(py_path, d)
-            cmd = "%s/setup.py"%os.path.join(py_path, d)
-            # out = subprocess.call(cmd, shell=True)
-            # if out == 1:
-            #     1/0
-            x = run_setup(cmd,)
-            print(x)
+            out = subprocess.call(cmd, shell=True)
+            if out == 1:
+                1/0
 
 
 setup(
