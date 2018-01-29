@@ -126,13 +126,13 @@ def render_to_pdf(template_src, context_dict, preamble_template='aristotle_mdr/d
     ])
 
     context = Context(context_dict)
-    html = template.render(context)
+    html = template.render(context_dict)
 
     if debug_as_html:
         return HttpResponse(html)
 
     document = weasyprint.HTML(
-        string=template.render(context),
+        string=template.render(context_dict),
         base_url=PDF_STATIC_PATH
     ).render()
 
@@ -141,9 +141,11 @@ def render_to_pdf(template_src, context_dict, preamble_template='aristotle_mdr/d
 
     table_of_contents_string = generate_outline_str(document.make_bookmark_tree())
     toc = get_template('aristotle_mdr/downloads/pdf/toc.html').render(
-        Context({
+        # Context(
+        {
             "toc_tree": generate_outline_tree(document.make_bookmark_tree())
-        })
+        }
+        # )
     )
 
     table_of_contents_document = weasyprint.HTML(
@@ -153,7 +155,7 @@ def render_to_pdf(template_src, context_dict, preamble_template='aristotle_mdr/d
 
     if preamble_template:
         title_page = weasyprint.HTML(
-            string=get_template(preamble_template).render(context),
+            string=get_template(preamble_template).render(context_dict),
             base_url=PDF_STATIC_PATH
         ).render().pages[0]
         document.pages.insert(0, title_page)

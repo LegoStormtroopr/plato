@@ -18,6 +18,7 @@ setup(
     url='https://github.com/aristotle-mdr/comet-indicator-registry',
     author='Samuel Spencer',
     author_email='sam@aristotlementadata.com',
+    zip_safe=False,
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',

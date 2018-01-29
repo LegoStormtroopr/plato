@@ -22,6 +22,7 @@ setup(
     url='https://github.com/aristotle-mdr/aristotle-metadata-registry',
     author='Samuel Spencer',
     author_email='sam@aristotlemetadata.com',
+    zip_safe=False,
     classifiers=[
         'Development Status :: 5 - Production/Stable',
 

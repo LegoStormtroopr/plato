@@ -17,6 +17,7 @@ setup(
     url='https://github.com/aristotle-mdr/aristotle-pdf-downloads',
     author='Samuel Spencer',
     author_email='sam@aristotlemetadata.com',
+    zip_safe=False,
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',

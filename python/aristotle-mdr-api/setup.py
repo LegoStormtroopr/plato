@@ -18,6 +18,7 @@ setup(
     url='https://github.com/aristotle-mdr/aristotle-mdr-api',
     author='Samuel Spencer',
     author_email='sam@sqbl.org',
+    zip_safe=False,
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',

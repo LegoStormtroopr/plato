@@ -19,6 +19,7 @@ setup(
     url='https://github.com/aristotle-mdr/mallard-questionnaire-registry',
     author='Samuel Spencer',
     author_email='sam@aristotlemetadata.com',
+    zip_safe=False,
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
