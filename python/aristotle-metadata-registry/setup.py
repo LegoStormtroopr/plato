@@ -1,8 +1,9 @@
 import os
 from setuptools import setup, find_packages
-from aristotle_mdr import get_version
+# from aristotle_mdr import get_version
 
-VERSION = get_version()
+# VERSION = get_version()
+VERSION = '2.0.0-dev0' #get_version()
 
 with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
     README = readme.read()
