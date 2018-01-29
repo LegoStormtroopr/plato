@@ -19,7 +19,9 @@ class InstallLocalPackages(install):
         for d in os.listdir(py_path):
             print( os.path.join(py_path, d))
             cmd = "python %s/setup.py install"%os.path.join(py_path, d)
-            subprocess.call(cmd, shell=True)
+            out = subprocess.call(cmd, shell=True)
+            if out == 1:
+                1/0
 
 
 setup(
