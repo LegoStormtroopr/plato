@@ -14,8 +14,8 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     license='BSD Licence',
-    description='',
-    long_description=README,
+    description='Questionnaire stuff',
+    long_description="README",
     url='https://github.com/aristotle-mdr/mallard-questionnaire-registry',
     author='Samuel Spencer',
     author_email='sam@aristotlemetadata.com',
@@ -30,6 +30,6 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
     install_requires = [
-        'aristotle-metadata-registry',
+        # 'aristotle-metadata-registry',
     ]
 )
